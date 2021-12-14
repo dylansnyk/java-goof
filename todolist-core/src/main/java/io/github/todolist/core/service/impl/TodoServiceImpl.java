@@ -27,6 +27,8 @@ package io.github.todolist.core.service.impl;
 import io.github.todolist.core.domain.Todo;
 import io.github.todolist.core.repository.api.TodoRepository;
 import io.github.todolist.core.service.api.TodoService;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +46,8 @@ public class TodoServiceImpl implements TodoService {
 
     @Autowired
     private TodoRepository todoRepository;
+
+    private Logger logger;
 
     /**
      * {@inheritDoc}
@@ -71,6 +75,8 @@ public class TodoServiceImpl implements TodoService {
      */
     @Transactional
     public Todo update(Todo todo) {
+        logger.log(Level.INFO, String.format("Update: %s", todo.getTitle()));
+
         return todoRepository.update(todo);
     }
 
