@@ -11,6 +11,7 @@
 
     <properties>
         <spring.version>3.2.6.RELEASE</spring.version>
+        <spring-boot.version>2.5.7</spring-boot.version>
         <hibernate.version>4.3.7.Final</hibernate.version>
         <tapestry.version>5.3.8</tapestry.version>
         <struts2.version>2.3.20</struts2.version>
@@ -23,6 +24,19 @@
         <module>todolist-web-struts</module>
     </modules>
     <packaging>pom</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>a0sfwggrrsxfh-artifactory-primary-0-releases</name>
+            <url>https://dylansnyk.jfrog.io/artifactory/default-maven-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>a0sfwggrrsxfh-artifactory-primary-0-snapshots</name>
+            <url>https://dylansnyk.jfrog.io/artifactory/default-maven-local</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
